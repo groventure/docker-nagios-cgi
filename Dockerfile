@@ -45,3 +45,5 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/bin/bash", "/usr/local/bin/entrypoint.sh"]
+
+EXPOSE 80/tcp
