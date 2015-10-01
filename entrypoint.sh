@@ -28,6 +28,4 @@ _hash=$(echo -n "$ADMIN_PASSWORD" | openssl sha1 -binary | base64)
 echo "$ADMIN_USER:{SHA}$_hash" > /etc/nagios3/htpasswd.users
 
 . /etc/apache2/envvars
-/usr/sbin/apache2 -D 'FOREGROUND' -f 'apache2.conf'
-
-set +e
+exec /usr/sbin/apache2 -D 'FOREGROUND' -f 'apache2.conf'
